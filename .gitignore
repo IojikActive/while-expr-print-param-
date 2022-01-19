@@ -1,0 +1,4 @@
+﻿/backup
+/test
+*.exe
+/test_scan.cpp
