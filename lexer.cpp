@@ -74,6 +74,10 @@ int scan() {
             lookahead = COMMA;
             return lookahead;
         }
+        else if (c == ';'){
+            lookahead = SEMI;
+            return lookahead;
+        }
         else if (c == '+'){
             c = getchar();
             if (c != '+') error("invalid character");
