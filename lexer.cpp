@@ -46,7 +46,7 @@ int scan() {
             c = getchar();
             lastToken += c;
             if (c != 'e') error("invalid character");
-            
+
             lookahead = WHILE;
             return lookahead;
         }
@@ -95,6 +95,7 @@ int scan() {
                 c = getchar();
                 lastToken += c;
             }while(isalpha(c));
+            return lookahead;//?
         }else if (c == '\n'){
             lookahead = EMPTY;
             return lookahead;
