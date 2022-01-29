@@ -2,3 +2,4 @@
 /test
 *.exe
 /test_scan.cpp
+*.rar
