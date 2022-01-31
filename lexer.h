@@ -9,11 +9,15 @@
 
 std::string semDec(int Lexem);
 
+
+// обрабатывает случай while9)while...
+// while(9<10)while(1<2)print(1)
+
 enum
 {
 	WHILE, 		//ok
 	PRINT,		//ok
-	VAR,		// For var names OK?
+	VAR,		// 
 	NUM,	 	//numbers ok
 	PLUS, 		// ++ ok
 	LESS, 		// < ok

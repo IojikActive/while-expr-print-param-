@@ -17,9 +17,9 @@ int scan() {
         lastToken += c;
         //printf("Lexer:  %c \n",c);
         std::cout << "[LEXER]: C:"<<c << " LastToken:" << lastToken << std::endl;
-        if (c == ' ' || c == '\t' || c == '\r'){;} // Возможно стоит очищать lastToken?
+        if (c == ' ' || c == '\t' || c == '\r'){} // Возможно стоит очищать lastToken?
         else if (isdigit(c))
-        {
+        { // 123123123123 123123123
             int tokenval = c - '0';
             c = getchar();
             lastToken += c;
@@ -46,13 +46,12 @@ int scan() {
             c = getchar();
             lastToken += c;
             if (c != 'e') error("invalid character");
-
             lookahead = WHILE;
             return lookahead;
         }
         else if (c == 'p'){
             c = getchar();
-            if (c != 'r') error("invalid character");
+            if (c != 'r') error("invalid character"); 
             c = getchar();
             if (c != 'i') error("invalid character");
             c = getchar();
@@ -74,9 +73,9 @@ int scan() {
             lookahead = COMMA;
             return lookahead;
         }
-        else if (c == '+'){
+        else if (c == '+'){ 
             c = getchar();
-            if (c != '+') error("invalid character");
+            if (c != '+') error("invalid character, maybe \"++\" ?");
             lookahead = PLUS;
             return lookahead;
         }
@@ -95,10 +94,7 @@ int scan() {
                 c = getchar();
                 lastToken += c;
             }while(isalpha(c));
-            return lookahead;//?
-        }else if (c == '\n'){
-            lookahead = EMPTY;
-            return lookahead;
+            return lookahead;//? ОНО НЕ РАБОТАЕТ
         }
         
         else {
