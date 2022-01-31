@@ -8,6 +8,7 @@ extern int leftIntValue;
 extern int rightIntValue;
 
 
+
 void temptemp();
 void temp();
 bool expr();
@@ -20,7 +21,11 @@ int plus(int num);
 int main()
 {
     std::cout <<"[PARSER]: " << __FUNCTION__ << ": BEGIN" << " lookahead = " << semDec(lookahead) << "\n";
-    scan();
+    int a;
+    std::cout << "enter \"a\" value:";
+    std::cin >> a;
+
+    //scan();
 
     //std::cout << "[PARSER]: lookahead= " << lookahead << "\n";
     temptemp();    
@@ -32,10 +37,23 @@ int main()
 }
 
 
+
+
+
 int plus(int num){
-    
+
     scan();
+
     if(lookahead == NUM){
+        return num++;
+    }else error("error in plus");
+}
+
+void var( std::string namevar) { // пока что будем парсить только переменную а...
+    
+    if (lookahead == VAR){
+
         
     }
+
 }

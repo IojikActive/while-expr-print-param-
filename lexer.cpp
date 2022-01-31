@@ -94,6 +94,7 @@ int scan() {
                 c = getchar();
                 lastToken += c;
             }while(isalpha(c));
+            lookahead = VAR;
             return lookahead;//? ОНО НЕ РАБОТАЕТ
         }
         
