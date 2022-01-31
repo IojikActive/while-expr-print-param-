@@ -94,7 +94,11 @@ void expr(){
     std::cout << __FUNCTION__ << " BEGIN" << "\n";
     
     param();
-    compar();
+    //scan();
+    if( (lookahead == LESS) || (lookahead == MORE)){
+        compar();
+    }else error("Error in expr , NO LESS or NO MORE");
+    //compar();
 }
 
 
@@ -105,7 +109,7 @@ bool compar(){
 
     bool result = false;
     int tempint = intvalue;
-    scan();
+    //scan();
 
     DEBUG();
     std::cout << __FUNCTION__ << " BEGIN" << " Before scan"  << "\n";
