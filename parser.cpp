@@ -94,7 +94,7 @@ void expr(){
     std::cout << __FUNCTION__ << " BEGIN" << "\n";
     
     param();
-    //scan();
+    scan();
     if( (lookahead == LESS) || (lookahead == MORE)){
         compar();
     }else error("Error in expr , NO LESS or NO MORE");
@@ -128,10 +128,6 @@ bool compar(){
 
     }else return result;
 
-
-
-
-
 }
 
 
@@ -147,7 +143,7 @@ int param () {
 
     }else if(lookahead == VAR ){
         int tempint = var(); // Для перспективного анализа имени пременной и возвращения значения имени переменной
-        scan();
+        //scan();
         if (lookahead == PLUS){
             return plus(tempint);
 
@@ -156,8 +152,15 @@ int param () {
         
         scan();
         if (lookahead == VAR){
-            int tempint = var();// Для перспективного анализа имени пременной и возвращения значения имени переменной
-            return plus(tempint);
+            scan();
+            if(lookahead == PLUS){
+                int tempint = var();// Для перспективного анализа имени пременной и возвращения значения имени переменной
+                return plus(tempint);
+            }else if(lookahead == RPAREN){
+                scan();
+            }
+            
+            
         }else error("bad PLUSVAR in param");
 
     }else error("error bad param?");
@@ -179,5 +182,8 @@ int plus(int num){
 // Для перспективного анализа имени пременной и возвращения значения имени переменной
 
 int var() { // пока что будем парсить только переменную а...
+    DEBUG();
+    std::cout << __FUNCTION__ << " BEGIN" << "\n";
+    
     return a;
 }

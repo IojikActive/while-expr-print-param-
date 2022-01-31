@@ -7,9 +7,6 @@ std::string lastToken;
 
 
 
-void debugInfo(char c, std::string lastToken , std::string info){
-    std::cout << "[LEXER]: C:"<<c << " LastToken:" << lastToken << "\t" << info << "\n";
-}
 
 int scan() {
     std::string lastToken = "";
