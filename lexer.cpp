@@ -1,8 +1,9 @@
 #include "lexer.h"
 
-int     lookahead;
+int     lookahead = -1;
 int     intvalue;
 
+std::string lastToken;
 
 
 
@@ -17,9 +18,9 @@ int scan() {
         lastToken += c;
         //printf("Lexer:  %c \n",c);
         std::cout << "[LEXER]: C:"<<c << " LastToken:" << lastToken << std::endl;
-        if (c == ' ' || c == '\t' || c == '\r'){} // Возможно стоит очищать lastToken?
+        if (c == ' ' || c == '\t' || c == '\r'){}
         else if (isdigit(c))
-        { // 123123123123 123123123
+        { 
             int tokenval = c - '0';
             c = getchar();
             lastToken += c;
@@ -86,7 +87,15 @@ int scan() {
         else if (c == '>'){
             lookahead = MORE;
             return lookahead;
-        }else if(isalpha(c)){
+        }else if (c == 'a'){
+            lookahead = VAR;
+            return lookahead;
+        }else if (c == ';'){
+            lookahead = SEMI;
+            return lookahead;
+        }
+        
+        /* else if(isalpha(c)){
             lastToken = "";
             lastToken +=c;
             do{
@@ -96,7 +105,7 @@ int scan() {
             }while(isalpha(c));
             lookahead = VAR;
             return lookahead;//? ОНО НЕ РАБОТАЕТ
-        }
+        } */
         
         else {
             error("Non-existing token: " + lastToken);
@@ -104,8 +113,11 @@ int scan() {
     }
 }
 
+
+
 int error(std::string errorMessage) {
     std::cout << errorMessage << "\n";
+    std::cout <<"[ERROR] "<< __FUNCTION__ << " BEGIN " << "LastToken:" << lastToken <<"lookahead: " << semDec(lookahead) << "\n";
     exit(EXIT_FAILURE);
 }
 
@@ -127,7 +139,6 @@ std::string semDec(int Lexem){
             lexemName = "VAR"; 
             break;
             return lexemName;
-            
         case 3:
             lexemName = "NUM"; 
             break;
@@ -162,6 +173,10 @@ std::string semDec(int Lexem){
             return lexemName;
         case 11:
             lexemName = "EMPTY";
+            break;
+            return lexemName;
+        case -1:
+            lexemName = "START SYMBOL";
             break;
             return lexemName;
         default:

@@ -1,0 +1,4 @@
+﻿while(a<2)print(1);     ok
+
+
+while(2)print(1);
