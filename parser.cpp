@@ -29,16 +29,9 @@ void DEBUG() {
 int main()
 {
     std::cout <<"[PARSER]: " << __FUNCTION__ << ": BEGIN" << " lookahead = " << semDec(lookahead) << "\n";
-    //std::cout << "enter \"a\" value:";
-    //std::cin >> a;
-
-    //scan();
-
-    //std::cout << "[PARSER]: lookahead= " << lookahead << "\n";
-    temptemp();    
     
-    //std::cout << "result : "<< result << std::endl;
-    
+    temptemp();
+        
     std::cin.get();
     return 0;
 }
@@ -55,7 +48,7 @@ void temp(){
     scan();
 
     DEBUG();
-    std::cout << __FUNCTION__ << " BEGIN" << " Before scan"  << "\n";
+    //std::cout << __FUNCTION__ << " BEGIN" << " Before scan"  << "\n";
 
     if(lookahead == WHILE){
         scan();
@@ -76,7 +69,7 @@ void temp(){
         scan();
 
         DEBUG();
-        std::cout << __FUNCTION__ << " BEGIN" << " Before scan"  << "\n";
+        //std::cout << __FUNCTION__ << " BEGIN" << " Before scan"  << "\n";
 
         if(lookahead == RPAREN){
             scan();
@@ -112,7 +105,7 @@ bool compar(){
     //scan();
 
     DEBUG();
-    std::cout << __FUNCTION__ << " BEGIN" << " Before scan"  << "\n";
+    //std::cout << __FUNCTION__ << " BEGIN" << " Before scan"  << "\n";
     
     if(lookahead == LESS){
         DEBUG();
@@ -133,7 +126,6 @@ bool compar(){
 
 
 int param () {
-    
 
     scan();
     DEBUG();
@@ -143,14 +135,14 @@ int param () {
 
     }else if(lookahead == VAR ){
         int tempint = var(); // Для перспективного анализа имени пременной и возвращения значения имени переменной
-        //scan();
+        scan();//?
         if (lookahead == PLUS){
             return plus(tempint);
 
         }else return tempint;
     }else if (lookahead == PLUS){
         
-        scan();
+        scan();//?
         if (lookahead == VAR){
             scan();
             if(lookahead == PLUS){
