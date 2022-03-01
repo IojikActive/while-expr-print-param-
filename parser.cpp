@@ -24,20 +24,10 @@ void DEBUG() {
     std::cout <<"[DEBUG][PARSER]: " << "LastToken:" << lastToken <<"lookahead: " << semDec(lookahead) << "\n";
 }
 
-
-
-int main()
-{
-    std::cout <<"[PARSER]: " << __FUNCTION__ << ": BEGIN" << " lookahead = " << semDec(lookahead) << "\n";
-    
-    temptemp();
-        
-    std::cin.get();
-    return 0;
-}
-
-
 void temptemp(){
+    DEBUG();
+    std::cout << __FUNCTION__ << " BEGIN" << "\n";
+
     temp();
 }
 
@@ -74,7 +64,8 @@ void temp(){
         if(lookahead == RPAREN){
             scan();
             if(lookahead == SEMI){
-                exit(EXIT_SUCCESS);
+                //exit(EXIT_SUCCESS);
+                temptemp();
             }else error("error in temp, NO SEMI in end of string");
 
         }else error("error in temp, NO RPAREN in PRINT");
@@ -86,11 +77,13 @@ void expr(){
     DEBUG();
     std::cout << __FUNCTION__ << " BEGIN" << "\n";
     
+    
     param();
     scan();
     if( (lookahead == LESS) || (lookahead == MORE)){
         compar();
-    }else error("Error in expr , NO LESS or NO MORE");
+    }else return;
+    //error("Error in expr , NO LESS or NO MORE");
     //compar();
 }
 
@@ -135,25 +128,30 @@ int param () {
 
     }else if(lookahead == VAR ){
         int tempint = var(); // Для перспективного анализа имени пременной и возвращения значения имени переменной
-        scan();//?
+        scan();
         if (lookahead == PLUS){
             return plus(tempint);
 
         }else return tempint;
     }else if (lookahead == PLUS){
+        scan();
+        if(lookahead == VAR){
+            int tempint = var();
+            return ++tempint;
+        }else error("Bad PLUSVAR int PARAM");
+
+       
         
-        scan();//?
-        if (lookahead == VAR){
-            scan();
-            if(lookahead == PLUS){
-                int tempint = var();// Для перспективного анализа имени пременной и возвращения значения имени переменной
-                return plus(tempint);
-            }else if(lookahead == RPAREN){
-                scan();
-            }
-            
-            
-        }else error("bad PLUSVAR in param");
+        // //scan();//?
+        // if (lookahead == VAR){
+        //     scan();
+        //     if(lookahead == PLUS){
+        //         int tempint = var();// Для перспективного анализа имени пременной и возвращения значения имени переменной
+        //         return plus(tempint);
+        //     }else if(lookahead == RPAREN){
+        //         scan();
+        //     }
+        // }else error("bad PLUSVAR in param");
 
     }else error("error bad param?");
 
@@ -163,11 +161,11 @@ int plus(int num){
     DEBUG();
     std::cout << __FUNCTION__ << " BEGIN" << "\n";
 
-    scan();
+    //scan();
 
-    if(lookahead == NUM){
-        return num++;
-    }else error("error in plus");
+    // if(lookahead == NUM){
+    //     return num++;
+    // }else error("error in plus");
 }
 
 
@@ -178,6 +176,16 @@ int var() { // пока что будем парсить только перем
     std::cout << __FUNCTION__ << " BEGIN" << "\n";
     
     return a;
+}
+
+int main()
+{
+    std::cout <<"[PARSER]: " << __FUNCTION__ << ": BEGIN" << " lookahead = " << semDec(lookahead) << "\n";
+    
+    temptemp();
+        
+    std::cin.get();
+    return 0;
 }
 
 

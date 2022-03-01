@@ -91,6 +91,13 @@ int scan() {
             lookahead = SEMI;
             return lookahead;
         }
+        else if(c == EOF){
+            lookahead = EMPTY;
+            return lookahead;
+        }else if (c == '\n'){
+            std::cout << "success";
+            exit(EXIT_SUCCESS);
+        }
         
         /* else if(isalpha(c)){
             lastToken = "";

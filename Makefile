@@ -3,5 +3,4 @@ all:
 	./parser
 
 test:
-	g++ test_scan.cpp -o test
-	./test
+	./parser
