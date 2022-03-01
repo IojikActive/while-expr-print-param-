@@ -62,6 +62,9 @@ void expr(){
     
     
     param();
+    if (lookahead == NUM){
+        return;
+    }
     scan();
     if( (lookahead == LESS) || (lookahead == MORE)){
         compare();
@@ -121,20 +124,6 @@ int param () {
             int tempint = var();
             return ++tempint;
         }else error("Bad PLUSVAR int PARAM");
-
-       
-        
-        // //scan();//?
-        // if (lookahead == VAR){
-        //     scan();
-        //     if(lookahead == PLUS){
-        //         int tempint = var();// Для перспективного анализа имени пременной и возвращения значения имени переменной
-        //         return plus(tempint);
-        //     }else if(lookahead == RPAREN){
-        //         scan();
-        //     }
-        // }else error("bad PLUSVAR in param");
-
     }else error("error bad param?");
 
 }
