@@ -1,24 +1,7 @@
+#include "parser.h"
 #include <stdio.h>
 #include "lexer.h"
 
-extern int  lookahead;
-extern int  intvalue;
-extern std::string lastToken;
-
-extern int leftIntValue;
-extern int rightIntValue;
-
-int a =1;
-
-
-
-void temptemp();
-void temp();
-void expr();
-bool compar();// возможно в аргумент придется передавать значение первого аргумента
-int param();
-int plus(int num);
-int var();
 
 void DEBUG() {
     std::cout <<"[DEBUG][PARSER]: " << "LastToken:" << lastToken <<"lookahead: " << semDec(lookahead) << "\n";
@@ -81,13 +64,13 @@ void expr(){
     param();
     scan();
     if( (lookahead == LESS) || (lookahead == MORE)){
-        compar();
+        compare();
     }else return;    
 }
 
 
 
-bool compar(){
+bool compare(){
     DEBUG();
     std::cout << __FUNCTION__ << " BEGIN" << "\n";
 
@@ -122,7 +105,8 @@ int param () {
     DEBUG();
     std::cout << __FUNCTION__ << " BEGIN" << "\n";
     if (lookahead == NUM){
-        return intvalue; // Вызывать compar()?
+        std::cout << __FUNCTION__ <<" EXIT NUM \n";
+        return intvalue; // Вызывать compare()?
 
     }else if(lookahead == VAR ){
         int tempint = var(); // Для перспективного анализа имени пременной и возвращения значения имени переменной
