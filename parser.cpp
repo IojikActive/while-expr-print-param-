@@ -82,9 +82,7 @@ void expr(){
     scan();
     if( (lookahead == LESS) || (lookahead == MORE)){
         compar();
-    }else return;
-    //error("Error in expr , NO LESS or NO MORE");
-    //compar();
+    }else return;    
 }
 
 
