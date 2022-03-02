@@ -39,9 +39,12 @@ void temp(){
             param();
         }else error("error in temp, NO LPARERN in PRINT");
 
-        scan();
+        if(lookahead !=RPAREN){
+            scan(); //?
+        }
+        //scan();
 
-        DEBUG();
+        //DEBUG();
         //std::cout << __FUNCTION__ << " BEGIN" << " Before scan"  << "\n";
 
         if(lookahead == RPAREN){
@@ -79,7 +82,6 @@ bool compare(){
 
     bool result = false;
     int tempint = intvalue;
-    //scan();
 
     DEBUG();
     //std::cout << __FUNCTION__ << " BEGIN" << " Before scan"  << "\n";
@@ -109,12 +111,13 @@ int param () {
     std::cout << __FUNCTION__ << " BEGIN" << "\n";
     if (lookahead == NUM){
         std::cout << __FUNCTION__ <<" EXIT NUM \n";
-        return intvalue; // Вызывать compare()?
+        return intvalue; 
 
     }else if(lookahead == VAR ){
-        int tempint = var(); // Для перспективного анализа имени пременной и возвращения значения имени переменной
+        int tempint = var(); 
         scan();
         if (lookahead == PLUS){
+            std::cout << __FUNCTION__ <<" EXIT RPLUS \n";
             return plus(tempint);
 
         }else return tempint;
@@ -122,7 +125,9 @@ int param () {
         scan();
         if(lookahead == VAR){
             int tempint = var();
+            std::cout << __FUNCTION__ <<" EXIT LPLUS \n";
             return ++tempint;
+
         }else error("Bad PLUSVAR int PARAM");
     }else error("error bad param?");
 
@@ -132,8 +137,8 @@ int plus(int num){
     DEBUG();
     std::cout << __FUNCTION__ << " BEGIN" << "\n";
 
+    return num++;
     //scan();
-
     // if(lookahead == NUM){
     //     return num++;
     // }else error("error in plus");

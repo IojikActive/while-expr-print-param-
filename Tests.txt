@@ -19,7 +19,7 @@ while(a<3) while(a<5) print(a);                     ok1
 
 
 
-while(a<2)print(1); while(a<5) print(1);                ok1
+while(a<2)print(a); while(a<5) print(a);                ok1
 while(a<5) print(1); while(a<3) while(a<5) print(2);    ok1
 
 while(a<3) while(a<5) print(a); while(2)print(1); while(a<5) print(1); while(a<5) print(++a); while(a<5) print(a++);while(a++<5) print(5);while(++a<5) print(4);      ok1
