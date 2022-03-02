@@ -1,0 +1,265 @@
+﻿PS A:\ForProgram\Translator\6\Ex6_parser\6.1\Translators_Analyzer\while(cond)\Stupak_ver> ^C
+PS A:\ForProgram\Translator\6\Ex6_parser\6.1\Translators_Analyzer\while(cond)\Stupak_ver> make test
+./parser
+[PARSER]: main: BEGIN lookahead = START SYMBOL
+[DEBUG][PARSER]: LastToken:lookahead: START SYMBOL
+temptemp BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: START SYMBOL
+temp BEGIN
+while(a<3) while(a<5) print(a); while(2)print(1); while(a<5) print(1); while(a<5) print(++a); while(a<5) print(a++);while(a++<5) print(5);while(++a<5) print(4);
+[LEXER]: C:w LastToken:w
+[DEBUG][PARSER]: LastToken:lookahead: WHILE
+[LEXER]: C:( LastToken:(
+[DEBUG][PARSER]: LastToken:lookahead: LPAREN
+expr BEGIN
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+param BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+[LEXER]: C:< LastToken:<
+[LEXER]: C:3 LastToken:3
+[LEXER]: C:) LastToken:)
+[DEBUG][PARSER]: LastToken:lookahead: RPAREN
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:w LastToken: w
+[DEBUG][PARSER]: LastToken:lookahead: WHILE
+[LEXER]: C:( LastToken:(
+[DEBUG][PARSER]: LastToken:lookahead: LPAREN
+expr BEGIN
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+param BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+[LEXER]: C:< LastToken:<
+[LEXER]: C:5 LastToken:5
+[LEXER]: C:) LastToken:)
+[DEBUG][PARSER]: LastToken:lookahead: RPAREN
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:p LastToken: p
+[DEBUG][PARSER]: LastToken:lookahead: PRINT
+[LEXER]: C:( LastToken:(
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+param BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+[LEXER]: C:) LastToken:)
+[LEXER]: C:; LastToken:;
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temptemp BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:w LastToken: w
+[DEBUG][PARSER]: LastToken:lookahead: WHILE
+[LEXER]: C:( LastToken:(
+[DEBUG][PARSER]: LastToken:lookahead: LPAREN
+expr BEGIN
+[LEXER]: C:2 LastToken:2
+[DEBUG][PARSER]: LastToken:lookahead: NUM
+param BEGIN
+param EXIT NUM
+[LEXER]: C:) LastToken:)
+[DEBUG][PARSER]: LastToken:lookahead: RPAREN
+temp BEGIN
+[LEXER]: C:p LastToken:p
+[DEBUG][PARSER]: LastToken:lookahead: PRINT
+[LEXER]: C:( LastToken:(
+[LEXER]: C:1 LastToken:1
+[DEBUG][PARSER]: LastToken:lookahead: NUM
+param BEGIN
+param EXIT NUM
+[LEXER]: C:) LastToken:)
+[LEXER]: C:; LastToken:;
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temptemp BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:w LastToken: w
+[DEBUG][PARSER]: LastToken:lookahead: WHILE
+[LEXER]: C:( LastToken:(
+[DEBUG][PARSER]: LastToken:lookahead: LPAREN
+expr BEGIN
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+param BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+[LEXER]: C:< LastToken:<
+[LEXER]: C:5 LastToken:5
+[LEXER]: C:) LastToken:)
+[DEBUG][PARSER]: LastToken:lookahead: RPAREN
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:p LastToken: p
+[DEBUG][PARSER]: LastToken:lookahead: PRINT
+[LEXER]: C:( LastToken:(
+[LEXER]: C:1 LastToken:1
+[DEBUG][PARSER]: LastToken:lookahead: NUM
+param BEGIN
+param EXIT NUM
+[LEXER]: C:) LastToken:)
+[LEXER]: C:; LastToken:;
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temptemp BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:w LastToken: w
+[DEBUG][PARSER]: LastToken:lookahead: WHILE
+[LEXER]: C:( LastToken:(
+[DEBUG][PARSER]: LastToken:lookahead: LPAREN
+expr BEGIN
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+param BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+[LEXER]: C:< LastToken:<
+[LEXER]: C:5 LastToken:5
+[LEXER]: C:) LastToken:)
+[DEBUG][PARSER]: LastToken:lookahead: RPAREN
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:p LastToken: p
+[DEBUG][PARSER]: LastToken:lookahead: PRINT
+[LEXER]: C:( LastToken:(
+[LEXER]: C:+ LastToken:+
+[DEBUG][PARSER]: LastToken:lookahead: PLUS
+param BEGIN
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+param EXIT LPLUS
+[LEXER]: C:) LastToken:)
+[LEXER]: C:; LastToken:;
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temptemp BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:w LastToken: w
+[DEBUG][PARSER]: LastToken:lookahead: WHILE
+[LEXER]: C:( LastToken:(
+[DEBUG][PARSER]: LastToken:lookahead: LPAREN
+expr BEGIN
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+param BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+[LEXER]: C:< LastToken:<
+[LEXER]: C:5 LastToken:5
+[LEXER]: C:) LastToken:)
+[DEBUG][PARSER]: LastToken:lookahead: RPAREN
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:p LastToken: p
+[DEBUG][PARSER]: LastToken:lookahead: PRINT
+[LEXER]: C:( LastToken:(
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+param BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+[LEXER]: C:+ LastToken:+
+param EXIT RPLUS
+[DEBUG][PARSER]: LastToken:lookahead: PLUS
+plus BEGIN
+[LEXER]: C:) LastToken:)
+[LEXER]: C:; LastToken:;
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temptemp BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temp BEGIN
+[LEXER]: C:w LastToken:w
+[DEBUG][PARSER]: LastToken:lookahead: WHILE
+[LEXER]: C:( LastToken:(
+[DEBUG][PARSER]: LastToken:lookahead: LPAREN
+expr BEGIN
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+param BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+[LEXER]: C:+ LastToken:+
+param EXIT RPLUS
+[DEBUG][PARSER]: LastToken:lookahead: PLUS
+plus BEGIN
+[LEXER]: C:< LastToken:<
+[DEBUG][PARSER]: LastToken:lookahead: LESS
+compare BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: LESS
+[DEBUG][PARSER]: LastToken:lookahead: LESS
+compare BEGIN
+LESS
+[LEXER]: C:5 LastToken:5
+[DEBUG][PARSER]: LastToken:lookahead: NUM
+param BEGIN
+param EXIT NUM
+[LEXER]: C:) LastToken:)
+[DEBUG][PARSER]: LastToken:lookahead: RPAREN
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:p LastToken: p
+[DEBUG][PARSER]: LastToken:lookahead: PRINT
+[LEXER]: C:( LastToken:(
+[LEXER]: C:5 LastToken:5
+[DEBUG][PARSER]: LastToken:lookahead: NUM
+param BEGIN
+param EXIT NUM
+[LEXER]: C:) LastToken:)
+[LEXER]: C:; LastToken:;
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temptemp BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temp BEGIN
+[LEXER]: C:w LastToken:w
+[DEBUG][PARSER]: LastToken:lookahead: WHILE
+[LEXER]: C:( LastToken:(
+[DEBUG][PARSER]: LastToken:lookahead: LPAREN
+expr BEGIN
+[LEXER]: C:+ LastToken:+
+[DEBUG][PARSER]: LastToken:lookahead: PLUS
+param BEGIN
+[LEXER]: C:a LastToken:a
+[DEBUG][PARSER]: LastToken:lookahead: VAR
+var BEGIN
+param EXIT LPLUS
+[LEXER]: C:< LastToken:<
+[DEBUG][PARSER]: LastToken:lookahead: LESS
+compare BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: LESS
+[DEBUG][PARSER]: LastToken:lookahead: LESS
+compare BEGIN
+LESS
+[LEXER]: C:5 LastToken:5
+[DEBUG][PARSER]: LastToken:lookahead: NUM
+param BEGIN
+param EXIT NUM
+[LEXER]: C:) LastToken:)
+[DEBUG][PARSER]: LastToken:lookahead: RPAREN
+temp BEGIN
+[LEXER]: C:  LastToken:
+[LEXER]: C:p LastToken: p
+[DEBUG][PARSER]: LastToken:lookahead: PRINT
+[LEXER]: C:( LastToken:(
+[LEXER]: C:4 LastToken:4
+[DEBUG][PARSER]: LastToken:lookahead: NUM
+param BEGIN
+param EXIT NUM
+[LEXER]: C:) LastToken:)
+[LEXER]: C:; LastToken:;
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temptemp BEGIN
+[DEBUG][PARSER]: LastToken:lookahead: SEMI
+temp BEGIN
+[LEXER]: C:
+ LastToken:
+
+success
