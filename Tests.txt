@@ -1,27 +1,27 @@
-﻿while(a<2)print(1);                      
-while(a<3) while(a<5) print(2);          
+﻿while(a<2)print(1);
+while(a<3) while(a<5) print(2);
 
 
-while(2)print(1);        
-
-
-
-
-while(a<5) print(1);                              
-while(a<5) print(++a);                            
-while(a<5) print(a++);                            
-while(a++<5) print(5);                            
-while(++a<5) print(4);                            
-while(a++<3) while(a++<5) print(a++);             
-while(a++<3)while(a++<5)while(++a<7)print(a++);   
-
-while(a<3) while(a<5) print(a);                      
+while(2)print(1);
 
 
 
-while(a<2)print(a); while(a<5) print(a);                 
-while(a<5) print(1); while(a<3) while(a<5) print(2);     
 
-while(a<3) while(a<5) print(a); while(2)print(1); while(a<5) print(1); while(a<5) print(++a); while(a<5) print(a++);while(a++<5) print(5);while(++a<5) print(4);       
+while(a<5) print(1);
+while(a<5) print(++a);
+while(a<5) print(a++);
+while(a++<5) print(5);
+while(++a<5) print(4);
+while(a++<3) while(a++<5) print(a++);
+while(a++<3)while(a++<5)while(++a<7)print(a++);
+
+while(a<3) while(a<5) print(a);
+
+
+
+while(a<2)print(a); while(a<5) print(a);
+while(a<5) print(1); while(a<3) while(a<5) print(2);
+
+while(a<3) while(a<5) print(a); while(2)print(1); while(a<5) print(1); while(a<5) print(++a); while(a<5) print(a++);while(a++<5) print(5);while(++a<5) print(4);
 
 
